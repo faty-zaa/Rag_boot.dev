@@ -12,18 +12,16 @@ def main() -> None:
 
     args = parser.parse_args()
     data = Data().get_data
+    
     match args.command:
         case "search":
             # print the search query here
             print(f"Searching for: {args.query}")
+            
+            # search the query in data
             queries = Search.search_keyword(data, args.query)
-            i = 1
             for query in queries.values():
-                if i < 6:
-                    print(f"{i}. {query} {i}")
-                    i += 1
-                else:
-                    break
+                print(f"{query}")
                 
         case _:
             parser.print_help()
