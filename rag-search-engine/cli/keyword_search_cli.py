@@ -12,7 +12,6 @@ def main() -> None:
 
     args = parser.parse_args()
     data = Data().get_data
-    
     match args.command:
         case "search":
             # print the search query here
